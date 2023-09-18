@@ -1,0 +1,19 @@
+rootProject.name = 'microservices'
+
+include ':platform-service'
+include ':platform-service:apigateway'
+include ':platform-service:discovery'
+
+println("Root dir")
+println("${rootDir}")
+
+
+project(':platform-service').projectDir = "$rootDir/platform-service" as File
+
+project(':platform-service:apigateway').projectDir = "$rootDir/platform-service/apigateway" as File
+//project(':discovery').projectDir = "$rootDir/platform-service/discovery" as File
+include 'business-services'
+include 'business-services'
+include 'business-services:common'
+findProject(':business-services:common')?.name = 'common'
+
