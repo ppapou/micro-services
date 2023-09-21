@@ -4,16 +4,19 @@ include ':platform-service'
 include ':platform-service:apigateway'
 include ':platform-service:discovery'
 
+include ':business-services'
+include ':business-services:common'
+
 println("Root dir")
 println("${rootDir}")
 
 
 project(':platform-service').projectDir = "$rootDir/platform-service" as File
-
 project(':platform-service:apigateway').projectDir = "$rootDir/platform-service/apigateway" as File
-//project(':discovery').projectDir = "$rootDir/platform-service/discovery" as File
-include 'business-services'
-include 'business-services'
-include 'business-services:common'
-findProject(':business-services:common')?.name = 'common'
+project(':platform-service:discovery').projectDir = "$rootDir/platform-service/discovery" as File
+
+project(':business-services').projectDir = "$rootDir/business-services" as File
+project(':business-services:common').projectDir = "$rootDir/business-services/common" as File
+
+//findProject(':business-services:common')?.name = 'common'
 
