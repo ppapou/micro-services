@@ -1,0 +1,6 @@
+description = 'Common service'
+
+dependencies {
+    implementation 'org.springframework:spring-web:6.0.12'
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-archaius'
+}

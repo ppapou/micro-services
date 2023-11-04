@@ -1,0 +1,6 @@
+description = 'API Gateway'
+
+dependencies {
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-zuul:2.2.10.RELEASE'
+    testImplementation 'junit:junit:4.13.1'
+}
